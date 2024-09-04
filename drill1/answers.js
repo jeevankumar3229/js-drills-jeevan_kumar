@@ -25,7 +25,7 @@ function printHobbies(age=30){
          if(arrayOfObjects[i].age === age){
             status=0;
             if(arrayOfObjects[i].hasOwnProperty("hobbies")){
-             console.log("Hobbies of individual of age 30: "+arrayOfObjects[i].hobbies);
+             console.log("Hobbies of individual of age "+age+" is "+arrayOfObjects[i].hobbies);
             }
             else{
                 console.log("Individual of age 30 with ID "+arrayOfObjects[i].id+" has no hobbies property");
