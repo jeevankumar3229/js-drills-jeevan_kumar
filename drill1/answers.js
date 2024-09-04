@@ -17,10 +17,13 @@ function returnEmailaddress(){
 
 //    Implement a function that retrieves and prints the hobbies of individuals with a specific age, say 30 years old.
 function printHobbies(age=30){
+    if(typeof age == 'number'){
+        let status=1;
      for(let i=0;i<arrayOfObjects.length;i++){
         if(arrayOfObjects[i].hasOwnProperty("age")){
             
          if(arrayOfObjects[i].age === age){
+            status=0;
             if(arrayOfObjects[i].hasOwnProperty("hobbies")){
              console.log("Hobbies of individual of age 30: "+arrayOfObjects[i].hobbies);
             }
@@ -30,6 +33,13 @@ function printHobbies(age=30){
          }
         }
      }
+     if(status==1){
+        console.log("There are no individuals of "+age);
+     }
+    }
+    else{
+        console.log("Enter a valid a age");
+    }
 }
 
 
