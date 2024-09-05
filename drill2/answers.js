@@ -7,21 +7,19 @@ function findAllUsers(){
     for(let user in users){
         let a=users[user];
         if(a.hasOwnProperty("interests") | a.hasOwnProperty("interest")){
-        for(let interest1 in a){
-            let b=a[interest1]
-            if(typeof b === 'object'){
-                for(let object1 in b){
-                    if(typeof b[object1] === 'string'){
-                        let str2=b[object1].toLowerCase();
-                        if(str2.includes('video games')){
-                            arr[user]=users[user];
-                            status=2;
-                        }
-                    }
-                }
-            }
-        
+            let b="";
+        if(a.hasOwnProperty("interests")){
+            b ="interests";
         }
+        else if(a.hasOwnProperty("interest")){
+            b="interest";
+        }
+       for(let i=0; i<a[b].length;i++){
+            if(a[b][i].toLowerCase().includes("video games")){
+                arr[user]=users[user];
+                status=2;
+            }
+       }
     }
     }
     if(status===2){
